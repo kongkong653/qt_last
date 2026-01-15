@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ChatWindow</class>
+ <widget class="QWidget" name="ChatWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>700</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>聊天窗口</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget {
+    background: #f5f5f5;
+}
+
+QLineEdit {
+    padding: 8px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    background: white;
+}
+
+QLineEdit:focus {
+    border-color: #0078d4;
+}
+
+QPushButton {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+        stop:0 #0078d4, stop:1 #005a9e);
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    min-width: 80px;
+}
+
+QPushButton:hover {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+        stop:0 #1084e4, stop:1 #006ab8);
+}
+
+QPushButton:pressed {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+        stop:0 #005a9e, stop:1 #004080);
+}
+
+QPushButton:disabled {
+    background: #ccc;
+    color: #666;
+}
+
+QTextEdit {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: white;
+    font-size: 14px;
+    padding: 5px;
+}
+
+QLabel {
+    color: #333;
+}</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QWidget" name="headerWidget" native="true">
+     <property name="styleSheet">
+      <string notr="true">QWidget {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+        stop:0 #0078d4, stop:1 #005a9e);
+    border-bottom: 2px solid #004080;
+}</string>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <property name="spacing">
+       <number>10</number>
+      </property>
+      <property name="leftMargin">
+       <number>15</number>
+      </property>
+      <property name="topMargin">
+       <number>10</number>
+      </property>
+      <property name="rightMargin">
+       <number>15</number>
+      </property>
+      <property name="bottomMargin">
+       <number>10</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="titleLabel">
+        <property name="text">
+         <string>聊天窗口</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QTextEdit" name="messageList">
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QTextEdit {
+    background: #fafafa;
+    border: none;
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 10px;
+    font-size: 14px;
+    line-height: 1.6;
+}</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QWidget" name="inputWidget" native="true">
+     <property name="styleSheet">
+      <string notr="true">QWidget {
+    background: white;
+    border-top: 1px solid #ddd;
+}</string>
+     </property>
+     <layout class="QHBoxLayout" name="inputLayout">
+      <property name="spacing">
+       <number>10</number>
+      </property>
+      <property name="leftMargin">
+       <number>10</number>
+      </property>
+      <property name="topMargin">
+       <number>10</number>
+      </property>
+      <property name="rightMargin">
+       <number>10</number>
+      </property>
+      <property name="bottomMargin">
+       <number>10</number>
+      </property>
+      <item>
+       <widget class="QLineEdit" name="inputEdit">
+        <property name="placeholderText">
+         <string>输入消息...</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="sendButton">
+        <property name="text">
+         <string>发送</string>
+        </property>
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
